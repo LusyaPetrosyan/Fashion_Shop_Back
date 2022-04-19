@@ -7,12 +7,11 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 public interface ImageService {
+    Product saveImagesToFolder(long productId, MultipartFile[] images, String serverUrl);
 
-    Product saveImagesToFolder(long productId, MultipartFile[] images);
+    byte[] readByFolderNameAndImageName(String folderName, String imageName) throws IOException;
 
-    byte[] readAllByProductId(long productId, long imgId) throws IOException;
+    Image update(long productId, MultipartFile[] images, String serverUrl);
 
-    Image update(MultipartFile file);
-
-    void delete(MultipartFile file);
+    void delete(long id);
 }
