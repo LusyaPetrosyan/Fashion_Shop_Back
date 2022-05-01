@@ -80,22 +80,6 @@ public class OrderServiceImpl implements OrderService {
         );
     }
 
-//    @Transactional
-//    @Override
-//    public Order update(String id, OrderUpdateReqDto reqDto) {
-//        Order fromDb = orderRepository
-//                .findById(id)
-//                .orElseThrow(() -> new ResponseStatusException(
-//                        HttpStatus.BAD_REQUEST,
-//                        "product with id:" + id + "  not found in database")
-//                );
-//        fromDb.setCount(reqDto.getCount());
-//        fromDb.setOrderStatus(reqDto.getOrderStatus());
-//
-//        return fromDb;
-//        return null;
-//    }
-
     /***
      *
      * @param userId property is used to determine if the user
@@ -115,6 +99,7 @@ public class OrderServiceImpl implements OrderService {
      * @param orderId finds the necessary order from DB by provided orderId
      * @param orderStatus change the status of the found order
      */
+
     @Override
     @Transactional
     public void changeStatus(Long orderId, OrderStatus orderStatus) {
